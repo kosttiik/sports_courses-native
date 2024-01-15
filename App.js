@@ -1,9 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ShopScreen from './screens/ShopScreen';
-import DeviceScreen from './screens/DeviceScreen';
+import CoursesScreen from './screens/CoursesScreen';
+import CourseScreen from './screens/CourseScreen';
 import { store } from './store';
 import { Provider } from 'react-redux';
 
@@ -14,8 +13,8 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Shop" component={ShopScreen} />    
-        <Stack.Screen name="Device" component={DeviceScreen} />    
+        <Stack.Screen name="Курсы" component={CoursesScreen} />    
+        <Stack.Screen name="Курс" component={CourseScreen} />    
       </Stack.Navigator>
       </NavigationContainer>
     </Provider>

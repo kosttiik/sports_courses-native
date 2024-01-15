@@ -1,4 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { deviceReducer } from './dataSlice';
+import { courseReducer } from './courseSlice';
 
-export const store = configureStore({ reducer: {device: deviceReducer} });
+export const store = configureStore({ reducer: {course: courseReducer} });
