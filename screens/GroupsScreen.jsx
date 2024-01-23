@@ -3,29 +3,29 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { axiosInstance } from '../api';
 import { StyleSheet } from 'react-native'
-import { setCourses } from '../store/courseSlice';
-import CourseCard from '../components/CourseCard';
+import { setGroups } from '../store/groupSlice';
+import GroupCard from '../components/GroupCard';
 
-export default function CoursesScreen({ navigation }) {
+export default function GroupsScreen({ navigation }) {
     const dispatch = useDispatch()
-    const {courses} = useSelector((store) => store.course)
+    const {groups} = useSelector((store) => store.group)
 
     const handleTextChange = async (newText) => {
-        await axiosInstance.get('/courses?title_pattern=' + newText).then((response) => dispatch(setCourses(response?.data)))
+        await axiosInstance.get('/groups?title_pattern=' + newText).then((response) => dispatch(setGroups(response?.data)))
     }
 
     useEffect(() => {
-        async function getAllCourses() {
-            await axiosInstance.get('/courses').then((response) => dispatch(setCourses(response?.data)))
+        async function getAllGroups() {
+            await axiosInstance.get('/groups').then((response) => dispatch(setGroups(response?.data)))
         }
-        getAllCourses()
+        getAllGroups()
     }, [dispatch])
     return (
         <ScrollView>
             <TextInput style={styles.input} onChangeText={newText => handleTextChange(newText)}></TextInput>
             <View style={styles.page}>
-                {!!courses &&
-                    courses.map((course) => <CourseCard key={course.ID} {...course} navigation={navigation}></CourseCard>)
+                {!!groups &&
+                    groups.map((group) => <GroupCard key={group.ID} {...group} navigation={navigation}></GroupCard>)
                     }
             </View>
         </ScrollView>

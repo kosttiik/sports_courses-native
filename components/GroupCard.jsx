@@ -3,16 +3,16 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
 
-export default function CourseCard({ navigation, ...props}) {
+export default function GroupCard({ navigation, ...props}) {
     const handlePress = () => {
-        navigation.navigate('Курс', {name: props.Title})
+        navigation.navigate('Группа', {name: props.Title})
     }
 
-    const [imageLink, setImageLink] = useState("http://192.168.1.93:9000/courseimages/basketball.png")
+    const [imageLink, setImageLink] = useState("http://192.168.1.93:9000/groupimages/basketball.png")
 
     useEffect(() => {
         if (props.ImageName) {
-            setImageLink("http://192.168.1.93:9000/courseimages/" + props.ImageName)
+            setImageLink("http://192.168.1.93:9000/groupimages/" + props.ImageName)
         }
     })
 

@@ -1,4 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { courseReducer } from './courseSlice';
+import { groupReducer } from './groupSlice';
 
-export const store = configureStore({ reducer: {course: courseReducer} });
+export const store = configureStore({ reducer: {group: groupReducer} });

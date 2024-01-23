@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import CoursesScreen from './screens/CoursesScreen';
-import CourseScreen from './screens/CourseScreen';
+import GroupsScreen from './screens/GroupsScreen';
+import GroupScreen from './screens/GroupScreen';
 import { store } from './store';
 import { Provider } from 'react-redux';
 
@@ -13,8 +13,8 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Курсы" component={CoursesScreen} />    
-        <Stack.Screen name="Курс" component={CourseScreen} />    
+        <Stack.Screen name="Группы" component={GroupsScreen} />    
+        <Stack.Screen name="Группа" component={GroupScreen} />    
       </Stack.Navigator>
       </NavigationContainer>
     </Provider>
